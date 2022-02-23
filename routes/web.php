@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\HomeController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +18,7 @@ use App\Http\Controllers\ContactController;
 
 Route::get('/', function () {
     return view('index' , [
-        "title" => "Beranda"
+        "title" => "Home"
     ]);
 });
 
@@ -32,6 +34,12 @@ Route::get('/about', function () {
 Route::get('/gallery', function () {
     return view ('gallery', [
         "title" => "Gallery"
+    ]);
+});
+
+Route::get('/home', function(){
+    return view('admin.home', [
+        "title" => "Home"
     ]);
 });
 
